@@ -81,8 +81,27 @@
     <!-- Load the AngularJS library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 
-    <!-- Load the JS Module -->
-    <script src="js/exam3.js"></script>
+
+    <script>
+
+var app3 = angular.module('app3', []);
+
+
+app3.controller('gListCtrl', function($scope) {
+
+  $scope.groceries = [
+    {item: "Tomatoes", purchased: false},
+    {item: "Potatoes", purchased: false},
+    {item: "Bread", purchased: false},
+    {item: "Hummus", purchased: false}
+  ];
+
+
+  $scope.getList = function(){
+    return $scope.showList ? "ulgrocerylist.html" : "grocerylist.html";
+  };
+
+});</script>
 
   </body>
 </html>
